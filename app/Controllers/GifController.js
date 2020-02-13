@@ -3,14 +3,22 @@ import store from "../store.js";
 
 // Private
 function _draw() {
-  let values = store.State.values;
-  console.log(values);
+  let gifs = store.State.gifs['Template']
+  document.getElementById("gifs").innerHTML = gifs;
+  // console.log(gifs);
 }
 
 //Public
 // !!!!ANCHOR  fix draw
 export default class GifController {
   constructor() {
-    store.subscribe("values", _draw);
+    store.subscribe("gifs", _draw);
+  }
+  addGif(){
+    GifService.addGif();
+  }
+
+  save(){
+    GifService.addGif();
   }
 }

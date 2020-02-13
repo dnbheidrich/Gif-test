@@ -1,4 +1,5 @@
 import store from "../store.js";
+import Gif from "../Models/Gif.js"
 
 let _myApi = axios.create({
   baseURL: "//bcw-sandbox.herokuapp.com/api/Dieter/gifs",
@@ -11,6 +12,16 @@ let _gifApi = axios.create({
 })
 
 class GifService {
+constructor(){}
+
+addGif(){
+  _gifApi.get("").then(res =>{
+let gifs = new Gif(res.data.data)
+store.commit("gifs", gifs)
+console.log(gifs);
+
+  })
+}
 
 
 
