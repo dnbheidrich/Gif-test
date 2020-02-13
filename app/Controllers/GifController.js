@@ -19,6 +19,6 @@ export default class GifController {
   }
 
   save(){
-    GifService.addGif();
+    GifService.save();
   }
 }

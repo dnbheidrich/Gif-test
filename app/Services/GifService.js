@@ -12,6 +12,9 @@ let _gifApi = axios.create({
 })
 
 class GifService {
+  save() {
+    
+  }
 constructor(){}
 
 addGif(){
