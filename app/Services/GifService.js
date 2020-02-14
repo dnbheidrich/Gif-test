@@ -12,6 +12,19 @@ let _gifApi = axios.create({
 })
 
 class GifService {
+
+
+  setActive(id) {
+    let gif = store.State.gifs.find(g => g.id == id);
+    if (!gif) {
+      gif = store.State.mygifs.find(g => g.id == id);
+      if (!gif) {
+        console.error("invalid gif id");
+        return;
+      }
+    }
+    store.commit("activeGif", gif);
+  }
   save() {
     debugger
     _myApi
