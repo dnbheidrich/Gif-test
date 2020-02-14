@@ -13,6 +13,17 @@ let _gifApi = axios.create({
 
 class GifService {
   save() {
+    debugger
+    _myApi
+    .post("", store.State.gifs)
+    .then(res => {
+      let myGifs = [...store.State.myGifs, store.State.gifs];
+      store.commit("myGifs", myGifs);
+    })
+    .catch(err => {
+      throw new Error(err);
+    });
+    console.log(store.State.gifs);
     
   }
 constructor(){}
